@@ -2,21 +2,44 @@
 % Please edit documentation in R/AllIdentical.R
 \name{AllIdentical}
 \alias{AllIdentical}
-\title{@title AllIdentical Function}
+\title{AllIdentical Function}
 \usage{
-AllIdentical(l)
+AllIdentical(l, check.all.pairs = FALSE, ...)
+}
+\arguments{
+\item{l}{the list of \R objects to test}
+
+\item{check.all.pairs}{logical indicating whether all pairwise tests
+should be done}
+
+\item{...}{additional arguments to \code{\link{identical}}}
+}
+\value{
+\code{TRUE} if all elements of \code{l} are identical and
+		\code{FALSE} otherwise.
 }
 \description{
-@description Returns TRUE iff all arguments are identical.
+This function evaluates whether all elements in a
+		\code{\link{list}} are identical according to the
+		\code{\link{identical}} function.
 }
 \details{
-@param A list of objects for which 'identical' is defined.
+By default, this function checks whether the first
+		element is \code{\link{identical}} to all others on the assumption
+		of transivity ((n - 1) calls to \code{\link{identical}}).
+		If the user changes
+		the \code{check.all.pairs} option from \code{FALSE}, its default, to
+		\code{TRUE}, the function checks all pairs ((n * (n - 1))/2 calls to
+		\code{\link{identical}}).
+		I don't know of any cases where \code{\link{identical}} isn't transitive,
+		so I don't know of any cases where this option would be necessary.
+}
+\examples{
+AllIdentical(list('a', 'b', 'c'))
+AllIdentical(list('a', 'a', 'a'))
 
-@author Robert Corty
-
-@usage l <- list(a, b, c)
-        AllIdentical(l))
-
-@export
+}
+\author{
+Robert Corty
 }
 
