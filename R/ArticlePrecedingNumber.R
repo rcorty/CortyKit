@@ -3,15 +3,15 @@
 #' @author Robert Corty
 #'
 #' @description This function returns the appropriate english definite
-#' 		or indefinite article to precede a number.  The possible return
-#' 		values are 'a', 'an', and 'the'
+#' or indefinite article to precede a number.  The possible return
+#' values are 'a', 'an', and 'the'
 #'
 #' @param n the number
 #' @param definite whether the definite (or indefinite) article is
-#' 		required.  Defaults to \code{FALSE}.
+#' required.  Defaults to \code{FALSE}.
 #'
 #' @return a character object from \code{c('a', 'an', 'the')}
-#'  	appropriate to precede the number
+#' appropriate to precede the number
 #'
 #' @examples
 #' ArticlePrecedingNumber(-8)

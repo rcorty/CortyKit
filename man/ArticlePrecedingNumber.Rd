@@ -14,12 +14,12 @@ required.  Defaults to \code{FALSE}.}
 }
 \value{
 a character object from \code{c('a', 'an', 'the')}
- 	appropriate to precede the number
+appropriate to precede the number
 }
 \description{
 This function returns the appropriate english definite
-		or indefinite article to precede a number.  The possible return
-		values are 'a', 'an', and 'the'
+or indefinite article to precede a number.  The possible return
+values are 'a', 'an', and 'the'
 }
 \examples{
 ArticlePrecedingNumber(-8)
