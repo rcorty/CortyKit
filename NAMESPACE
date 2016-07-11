@@ -2,4 +2,5 @@
 
 export(AllIdentical)
 export(ArticlePrecedingNumber)
+export(BlankPlot)
 export(IsBetween)
