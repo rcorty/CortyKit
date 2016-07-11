@@ -24,19 +24,19 @@
 #'
 ArticlePrecedingNumber <- function(n, definite = FALSE) {
 
-	# When the definite article is sought, it's always 'the', as in
-	# 'the one', 'the two', 'the eight'
-	if (definite) {
-		return('the')
-	}
+  # When the definite article is sought, it's always 'the', as in
+  # 'the one', 'the two', 'the eight'
+  if (definite) {
+    return('the')
+  }
 
-	# Negative numbers always get 'a' as in
-	# 'a negative fifteen'
+  # Negative numbers always get 'a' as in
+  # 'a negative fifteen'
   if (n < 1) {
     return('a')
   }
 
-	# Positive number that begin with 8 get 'an', all others get 'a'
+  # Positive number that begin with 8 get 'an', all others get 'a'
   first.digit <- substr(x = as.character(n), start = 1, stop = 1)
   if (first.digit == '8') {
     return('an')
