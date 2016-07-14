@@ -3,5 +3,6 @@
 export(AllIdentical)
 export(ArticlePrecedingNumber)
 export(BlankPlot)
+export(Divvy)
 export(IsBetween)
 export(RINT)
