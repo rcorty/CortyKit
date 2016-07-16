@@ -57,56 +57,35 @@ bsub_master <- function(f, param.list,
   }
 
   for (job.num in 1:nrow(param.df)) {
-<<<<<<< HEAD
     job.params <- paste(names(param.df), param.df[job.num,], sep = '=', collapse = ',')
-=======
-    job.params <- paste(names(param.df), param.df[job.num,], sep = '=', collapse = ', ')
->>>>>>> b74931231115ee6b5f1b69058cb8383c41e1db49
 
     writeLines(text = paste('Job', job.num, ':', job.params),
                con = description.file)
 
-<<<<<<< HEAD
     set.results.dir <- paste0("-e \"options(results.dir = '", results.dir, "')\"")
     set.param.list <- paste0("-e \"options(param.list =", job.params, ")\"")
     define.f <- paste("-e \"f <-", paste(deparse(f), collapse = ''), "\"")
     run.f <- paste("-e \"f(", job.params, ")\"")
 
     args <- paste('-J', paste0(batch.code, '_', job.params),
-=======
-    define.f <- paste("-e 'f <-", as.character(attr(eval(f), "srcref")), "'")
-    run.f <- paste("-e 'f(", job.params, ")'")
-
-    args <- paste('-J', job.params,
->>>>>>> b74931231115ee6b5f1b69058cb8383c41e1db49
                   '-o', file.path(lsf.out.dir, job.params),
                   '-q', q,
                   '-M', M,
                   'Rscript',
-<<<<<<< HEAD
                   set.results.dir,
                   set.param.list,
-=======
->>>>>>> b74931231115ee6b5f1b69058cb8383c41e1db49
                   define.f,
                   run.f)
 
     system2(command = "bsub",
-<<<<<<< HEAD
             args = shQuote(args))  # TODO: why no results being saved to directory?
-=======
-            args = args)
->>>>>>> b74931231115ee6b5f1b69058cb8383c41e1db49
 
   }
 
   # write closing of description file
   writeLines(text = 'grid-expanded job data.frame is',
              con = description.file)
-<<<<<<< HEAD
   # TODO: figure out how to pretty-print a df
-=======
->>>>>>> b74931231115ee6b5f1b69058cb8383c41e1db49
   write.table(x = param.df,
               file = description.file,
               quote = FALSE,
