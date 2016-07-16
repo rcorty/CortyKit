@@ -9,9 +9,9 @@
 #' @param param.list A named list of vectors of parameters.
 #' By default, all combinations will be used.
 #'
-#' @return t
+#' @return todo
 #'
-#' @details
+#' @details todo
 #'
 #' @examples
 #'
