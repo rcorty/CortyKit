@@ -19,7 +19,7 @@ Divvy(n, num.groups = ceiling(n/group.size),
 \item{i}{group of items to return}
 }
 \value{
-the \code{i}th group of size \code{g} in \code{1:n}
+the indices of the \code{i}th group of size \code{g} in \code{1:n}
 }
 \description{
 This function splits the integers from 1 to \code{n} into
@@ -31,8 +31,7 @@ for splitting up data/analyses.
 The \code{g}th group may be smaller than the other groups
 }
 \examples{
-RINT(runif(n = 100))
-RINT(rnorm(n = 100))
+
 
 }
 \author{
