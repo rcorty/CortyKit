@@ -4,3 +4,4 @@
 ^R/bsub_master\.R$
 ^tests/test_bsub_master\.R$
 ^tests/test_bsub_worker\.R$
+^R/sandbox\.R$
