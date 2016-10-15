@@ -23,22 +23,35 @@
 #'
 #' @export
 #'
-Divvy <- function(n,
-                  num.groups = ceiling(n/group.size),
-                  group.size = ceiling(n/num.groups),
-                  i) {
+Divvy <- function(first.idx,
+                  last.idx,
+                  which.group,
+                  num.groups = ceiling(n.idxs/group.size),
+                  group.size = ceiling(n.idxs/num.groups)) {
 
-  # avoid lunacy
-  stopifnot(i > 0)
+  idxs <- first.idx:last.idx
+  n.idxs <- length(idxs)
+
+  # avoid mayhem
   stopifnot(num.groups > 0)
   stopifnot(group.size > 0)
-  stopifnot(n > num.groups)
-  stopifnot(n > group.size)
-  stopifnot(num.groups >= i)
+  # commented these out because these cases actually make sense some times
+  # stopifnot(n.idxs >= num.groups)
+  # stopifnot(n.idxs >= group.size)
 
-  if (i == num.groups) {
-    return(((i - 1)*group.size + 1):(n))
+  if (missing(which.group)) {
+    return(data_frame(group.num = 1:num.groups) %>%
+             mutate(group.start.idx = (group.num - 1)*group.size + 1,
+                    group.stop.idx = ifelse(test = group.num == num.groups,
+                                            yes = last.idx,
+                                            no = group.num*group.size)))
   } else {
-    return(((i - 1)*group.size + 1):(i*group.size))
+  stopifnot(which.group > 0)
+  stopifnot(num.groups >= which.group)
+    if (which.group == num.groups) {
+      return(idxs[((which.group - 1)*group.size + 1):(n.idxs)])
+    } else {
+      return(idxs[((which.group - 1)*group.size + 1):(which.group*group.size)])
+    }
   }
 }

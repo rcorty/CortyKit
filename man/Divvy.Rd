@@ -4,17 +4,18 @@
 \alias{Divvy}
 \title{Divvy Function}
 \usage{
-Divvy(n, num.groups = ceiling(n/group.size),
-  group.size = ceiling(n/num.groups), i)
+Divvy(first.idx, last.idx, which.group,
+  num.groups = ceiling(n.idxs/group.size),
+  group.size = ceiling(n.idxs/num.groups))
 }
 \arguments{
-\item{n}{number of items to divvy up}
-
 \item{num.groups}{number of groups to divvy the items into, defaults to
 \code{ceiling(n/group.size)}}
 
 \item{group.size}{size of each group, defaults to
 \code{ceiling(n/num.groups)}}
+
+\item{n}{number of items to divvy up}
 
 \item{i}{group of items to return}
 }
