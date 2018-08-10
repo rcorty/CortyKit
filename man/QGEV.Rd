@@ -7,6 +7,12 @@
 QGEV(p, gev, ...)
 }
 \arguments{
+\item{p}{the probability}
+
+\item{gev}{the fitted gev}
+
 \item{...}{}
 }
-
+\value{
+the quantile of p
+}

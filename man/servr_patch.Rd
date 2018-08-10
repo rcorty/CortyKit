@@ -17,4 +17,3 @@ TRUE, if it completes successfully
 and replaces all instances of 'src="figure' with 'src="/figure'.  This is
 a very kludgey way to fix a small bug in \pkg{servr}.
 }
-

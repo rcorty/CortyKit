@@ -5,7 +5,6 @@
 #' @description my great function
 #'
 #'
-#' @export
 #'
 bsub_master <- function(f,
                         constant.params,

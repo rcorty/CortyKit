@@ -7,9 +7,15 @@
 PGEV(q, gev, ...)
 }
 \arguments{
+\item{q}{the quantile}
+
+\item{gev}{the fitted gev}
+
 \item{...}{}
+}
+\value{
+the CDF evaluated at q
 }
 \description{
 PGEV
 }
-

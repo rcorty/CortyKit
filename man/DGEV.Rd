@@ -7,9 +7,15 @@
 DGEV(xs, gev, log = FALSE)
 }
 \arguments{
-\item{log}{}
+\item{xs}{the xs}
+
+\item{gev}{the fitted gev}
+
+\item{log}{whether to return log likelihood}
+}
+\value{
+the density at xs
 }
 \description{
 DGEV
 }
-

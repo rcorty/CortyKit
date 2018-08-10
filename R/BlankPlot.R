@@ -25,11 +25,11 @@
 #' @export
 #'
 BlankPlot <- function(xlim = c(0, 1), ylim = c(0, 1), ...) {
-  plot(x = NA,
-       axes = FALSE,
-       xlab = "",
-       ylab = "",
-       xlim = xlim,
-       ylim = ylim,
-       ...)
+  graphics::plot(x = NA,
+                 axes = FALSE,
+                 xlab = "",
+                 ylab = "",
+                 xlim = xlim,
+                 ylim = ylim,
+                 ...)
 }

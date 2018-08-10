@@ -35,4 +35,3 @@ BlankPlot(main = "My Great Plot")
 \author{
 Robert Corty
 }
-

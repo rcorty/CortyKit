@@ -32,10 +32,11 @@ for splitting up data/analyses.
 The \code{g}th group may be smaller than the other groups
 }
 \examples{
-
+Divvy(first.idx = 10, last.idx = 50, num.groups = 3, which.group = 1)
+Divvy(first.idx = 10, last.idx = 50, num.groups = 3, which.group = 2)
+Divvy(first.idx = 10, last.idx = 50, num.groups = 3, which.group = 3)
 
 }
 \author{
 Robert Corty
 }
-

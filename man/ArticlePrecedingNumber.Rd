@@ -32,4 +32,3 @@ ArticlePrecedingNumber(8, definite = TRUE)
 \author{
 Robert Corty
 }
-

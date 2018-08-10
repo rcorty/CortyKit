@@ -17,4 +17,3 @@ Warnings are suppresssed.
 \description{
 silently get what you can out of an expression
 }
-

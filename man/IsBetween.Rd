@@ -40,4 +40,3 @@ IsBetween(x = 0, lb = 0, ub = 2, equality.ok = TRUE)
 \author{
 Robert Corty
 }
-

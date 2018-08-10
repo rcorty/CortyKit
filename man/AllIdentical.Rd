@@ -42,4 +42,3 @@ AllIdentical(list('a', 'a', 'a'))
 \author{
 Robert Corty
 }
-

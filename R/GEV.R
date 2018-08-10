@@ -1,13 +1,12 @@
 #' @title QGEV
 #'
-#' @param p
-#' @param gev
+#' @param p the probability
+#' @param gev the fitted gev
 #' @param ...
 #'
-#' @return
+#' @return the quantile of p
 #' @export
 #'
-#' @examples
 QGEV <- function(p, gev, ...) {
 
   # validate input
@@ -28,14 +27,13 @@ QGEV <- function(p, gev, ...) {
 
 #' DGEV
 #'
-#' @param xs
-#' @param gev
-#' @param log
+#' @param xs the xs
+#' @param gev the fitted gev
+#' @param log whether to return log likelihood
 #'
-#' @return
+#' @return the density at xs
 #' @export
 #'
-#' @examples
 DGEV <- function(xs, gev, log = FALSE) {
 
   # validate input
@@ -46,25 +44,24 @@ DGEV <- function(xs, gev, log = FALSE) {
     stop("gev$estimate must have three elements")
   }
 
-  return(dgev(x = xs,
-              loc = gev$estimate[1],
-              scale = gev$estimate[2],
-              shape = gev$estimate[3],
-              log = log))
+  return(evd::dgev(x = xs,
+                   loc = gev$estimate[1],
+                   scale = gev$estimate[2],
+                   shape = gev$estimate[3],
+                   log = log))
 
 }
 
 
 #' PGEV
 #'
-#' @param q
-#' @param gev
+#' @param q the quantile
+#' @param gev the fitted gev
 #' @param ...
 #'
-#' @return
+#' @return the CDF evaluated at q
 #' @export
 #'
-#' @examples
 PGEV <- function(q, gev, ...) {
 
   # validate input
@@ -75,9 +72,9 @@ PGEV <- function(q, gev, ...) {
     stop("gev$estimate must have three elements")
   }
 
-  return(pgev(q = q,
-              loc = gev$estimate[1],
-              scale = gev$estimate[2],
-              shape = gev$estimate[3], ...))
+  return(evd::pgev(q = q,
+                   loc = gev$estimate[1],
+                   scale = gev$estimate[2],
+                   shape = gev$estimate[3], ...))
 
 }

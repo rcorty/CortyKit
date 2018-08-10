@@ -6,19 +6,22 @@ Authors@R: person("Robert",
 	email = "rcorty@gmail.com",
 	role = c("aut", "cre"))
 Description: This package is a hodge-podge of functions that Robert Corty
-    wrote during graduate school at UNC.  They mostly relate to handling
-    genetic data, fitting statistical models, and running association tests.
+    wrote or found online during graduate school at UNC.
+    They mostly relate to handling genetic data, fitting statistical models,
+    and running association tests.
 Depends:
     R (>= 3.1.0),
     dplyr,
     tidyr,
     ggplot2,
     stringr,
-    GGally,
     RColorBrewer,
     readr,
     lubridate
 License: MIT
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
+Imports: evd,
+    tibble,
+    dplyr

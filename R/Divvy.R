@@ -18,16 +18,21 @@
 #'
 #' @details The \code{g}th group may be smaller than the other groups
 #'
-#' @examples
+#' @importFrom dplyr %>%
 #'
+#' @examples
+#' Divvy(first.idx = 10, last.idx = 50, num.groups = 3, which.group = 1)
+#' Divvy(first.idx = 10, last.idx = 50, num.groups = 3, which.group = 2)
+#' Divvy(first.idx = 10, last.idx = 50, num.groups = 3, which.group = 3)
 #'
 #' @export
-#'
 Divvy <- function(first.idx,
                   last.idx,
                   which.group,
                   num.groups = ceiling(n.idxs/group.size),
                   group.size = ceiling(n.idxs/num.groups)) {
+
+  group.num <- 'fake_global_for_CRAN'
 
   idxs <- first.idx:last.idx
   n.idxs <- length(idxs)
@@ -40,14 +45,14 @@ Divvy <- function(first.idx,
   # stopifnot(n.idxs >= group.size)
 
   if (missing(which.group)) {
-    return(data_frame(group.num = 1:num.groups) %>%
-             mutate(group.start.idx = (group.num - 1)*group.size + 1,
-                    group.stop.idx = ifelse(test = group.num == num.groups,
-                                            yes = last.idx,
-                                            no = group.num*group.size)))
+    return(tibble::data_frame(group.num = 1:num.groups) %>%
+             dplyr::mutate(group.start.idx = (group.num - 1)*group.size + 1,
+                           group.stop.idx = ifelse(test = group.num == num.groups,
+                                                   yes = last.idx,
+                                                   no = group.num*group.size)))
   } else {
-  stopifnot(which.group > 0)
-  stopifnot(num.groups >= which.group)
+    stopifnot(which.group > 0)
+    stopifnot(num.groups >= which.group)
     if (which.group == num.groups) {
       return(idxs[((which.group - 1)*group.size + 1):(n.idxs)])
     } else {
